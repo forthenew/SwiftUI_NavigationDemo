@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        NavigationView {
+            ZStack {
+                Color.red
+                NavigationLink(destination: DetailView()) {
+                    Image(systemName: SFSymbolName.play_circle_file).font(.largeTitle)
+                    Text("Play")
+                }
+                .foregroundColor(.white)
+            }
+            .edgesIgnoringSafeArea(.all)
+            .navigationTitle("Home")
+//            .navigationBarTitle("HOME")
+        }
     }
 }
 
